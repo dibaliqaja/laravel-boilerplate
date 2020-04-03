@@ -1,5 +1,8 @@
 <?php
 
+use App\Guest;
+use App\Hotel;
+use App\Room;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 
@@ -25,5 +28,12 @@ class DatabaseSeeder extends Seeder
         $this->call(AuthTableSeeder::class);
 
         Model::reguard();
+
+        // Guest Seeder
+        factory(Guest::class, 10)->create();
+        // Hotel Seeder
+        factory(Hotel::class, 10)->create();
+        // Room Seeder
+        factory(Room::class, 10)->create();
     }
 }
